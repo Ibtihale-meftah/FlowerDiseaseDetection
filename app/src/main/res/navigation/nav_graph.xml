@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permissions_fragment">
+
+    <!-- Permissions (premier écran, redirige vers caméra) -->
+    <fragment
+        android:id="@+id/permissions_fragment"
+        android:name="org.tensorflow.lite.examples.imageclassification.fragments.PermissionsFragment"
+        android:label="PermissionsFragment">
+
+        <action
+            android:id="@+id/action_permissions_to_camera"
+            app:destination="@id/camera_fragment"
+            app:popUpTo="@id/permissions_fragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- Accueil (caméra) -->
+    <fragment
+        android:id="@+id/camera_fragment"
+        android:name="org.tensorflow.lite.examples.imageclassification.fragments.CameraFragment"
+        android:label="Accueil">
+
+        <action
+            android:id="@+id/action_camera_to_permissions"
+            app:destination="@id/permissions_fragment"
+            app:popUpTo="@id/camera_fragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_camera_to_historique"
+            app:destination="@id/historique_fragment" />
+
+    </fragment>
+
+    <!-- Historique -->
+    <fragment
+        android:id="@+id/historique_fragment"
+        android:name="org.tensorflow.lite.examples.imageclassification.fragments.HistoriqueFragment"
+        android:label="Historique" />
+
+    <!-- Paramètres -->
+    <fragment
+        android:id="@+id/parametres_fragment"
+        android:name="org.tensorflow.lite.examples.imageclassification.fragments.ParametresFragment"
+        android:label="Paramètres" />
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="org.tensorflow.lite.examples.imageclassification.fragments.MapFragment"
+        android:label="Carte" />
+
+</navigation>

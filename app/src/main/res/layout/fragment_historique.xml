@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F6F6FA">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:background="#6200EE">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Historique"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Search bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="14dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="8dp"
+        android:background="@android:color/white">
+
+        <EditText
+            android:id="@+id/editTextSearchHistory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="Rechercher une fleur : Rose, Lily..."
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/btnMicSearchHistory"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:contentDescription="Recherche vocale" />
+
+        <ImageButton
+            android:id="@+id/btnClearSearchHistory"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Effacer recherche" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSearchResultInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toutes les détections"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="6dp" />
+
+    <TextView
+        android:id="@+id/tv_empty_historique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aucune détection enregistrée"
+        android:textColor="#777777"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_historique"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="90dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>
